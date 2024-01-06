@@ -58,6 +58,11 @@ app.delete('/dishes/:dishId', (req, res, next) => {
     res.end('Deleting dish: ' + req.params.dishId);
 });
 
+const dishRouter = require('./routes/dishRouter');
+
+app.use('/dishes', dishRouter);
+
+
 
 
 app.use((req, res, next) => {
